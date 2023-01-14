@@ -1,0 +1,19 @@
+{
+  "configurations": [
+    {
+      "type": "node",
+      "name": "Node.js - Run & Debug Current File",
+      "request": "launch",
+      "program": "${file}",
+      "outputCapture": "std"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Run Script: script:data",
+      "request": "launch",
+      "command": "npm run script:data",
+      "cwd": "${workspaceFolder}/nifty",
+      "outputCapture": "std"
+    }
+  ]
+}

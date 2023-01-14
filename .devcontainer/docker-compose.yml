@@ -1,0 +1,63 @@
+version: '3'
+
+services:
+  crawl-housing-app:
+    # Uncomment the next line to use a non-root user for all processes. You can also
+    # simply use the "remoteUser" property in devcontainer.json if you just want
+    # VS Code and its sub-processes (terminals, tasks, debugging) to execute as the user
+    # On Linux, you may need to update the USER_UID and USER_GID in .devcontainer/Dockerfile
+    # to match your user if not 1000. See https://aka.ms/vscode-remote/containers/non-root for details.
+    # user: vscode
+
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+
+    # Use docker-sync instead, defined in docker-compose-dev.yml
+    # volumes:
+    #   - ..:/workspace:delegated
+
+    ports:
+      - 3000:3000
+      - 4000:4000
+      - 6006:6006
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+
+    # networks:
+    #   - default
+    # - twint_default
+
+  # postgresql:
+  #   image: bitnami/postgresql:14-debian-11
+  #   environment:
+  #     POSTGRESQL_USERNAME: postgresuser
+  #     POSTGRESQL_PASSWORD: postgrespassword
+  #     POSTGRESQL_DATABASE: postgres
+
+  # pgadmin:
+  #   image: dpage/pgadmin4:latest
+  #   ports:
+  #     - 5050:80
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: pgadmin@example.com
+  #     PGADMIN_DEFAULT_PASSWORD: admin
+
+  # redis:
+  #   image: redis:6.2-alpine
+  #   volumes:
+  #     # - data02:/data
+  #     - ./library-scripts/redis.conf:/usr/local/etc/redis/redis.conf
+  #   # ports:
+  #   #   - 6379:6379
+  #   command: redis-server /usr/local/etc/redis/redis.conf
+# volumes:
+#   data01:
+#   data02:
+
+# networks:
+#   default: # this network
+#     driver: bridge
+# twint_default: # external network
+#   external: true

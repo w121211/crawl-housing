@@ -1,0 +1,9 @@
+version: '2'
+services:
+  crawl-housing-app:
+    volumes:
+      - crawl-housing-app-sync:/workspace:nocopy # nocopy is important
+
+volumes:
+  crawl-housing-app-sync:
+    external: true

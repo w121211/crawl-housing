@@ -1,0 +1,67 @@
+module.exports = {
+  // extends: [
+  //   'eslint:recommended',
+  //   'plugin:react/recommended',
+  //   'plugin:@typescript-eslint/recommended',
+  //   'plugin:prettier/recommended',
+  //   'prettier/react',
+  //   'prettier/@typescript-eslint',
+  // ],
+  // plugins: ['@typescript-eslint', 'prettier', 'react', 'react-hooks'],
+  // env: {
+  //   node: true,
+  //   browser: true,
+  //   jest: true,
+  // },
+  // parser: '@typescript-eslint/parser',
+  // parserOptions: {
+  //   project: 'tsconfig.json',
+  //   sourceType: 'module',
+  // },
+  // rules: {
+  //   '@typescript-eslint/no-unused-vars': 'warn',
+  //   'no-await-in-loop': 'warn',
+  //   'no-console': 'off',
+  //   'import/prefer-default-export': 'off',
+  // },
+
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    // Uncomment the following lines to enable eslint-config-prettier
+    // Is not enabled right now to avoid issues with the Next.js repo
+    // "prettier",
+  ],
+  env: {
+    es6: true,
+    browser: true,
+    jest: true,
+    node: true,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  rules: {
+    // 'react/react-in-jsx-scope': 0,
+    // "react/display-name": 0,
+    // "react/prop-types": 0,
+    // "@typescript-eslint/explicit-function-return-type": 0,
+    // "@typescript-eslint/explicit-member-accessibility": 0,
+    // "@typescript-eslint/indent": 0,
+    // "@typescript-eslint/member-delimiter-style": 0,
+    // "@typescript-eslint/no-explicit-any": 0,
+    // "@typescript-eslint/no-var-requires": 0,
+    // "@typescript-eslint/no-use-before-define": 0,
+    '@typescript-eslint/no-unused-vars': [
+      1,
+      {
+        argsIgnorePattern: '^_',
+      },
+    ],
+    'no-console': 0,
+  },
+}

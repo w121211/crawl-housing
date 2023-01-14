@@ -1,0 +1,38 @@
+{
+  "name": "crawl-housing",
+  // "dockerFile": "Dockerfile",
+  // "dockerComposeFile": ["docker-compose.yml"],
+  "dockerComposeFile": ["docker-compose.yml", "docker-compose-dev.yml"],
+  "service": "crawl-housing-app",
+  "workspaceFolder": "/workspace",
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "#terminal.integrated.defaultProfile.linux#": "/bin/zsh"
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    // "Prisma.prisma",
+    // "visualstudioexptteam.vscodeintellicode",
+    "dbaeumer.vscode-eslint",
+    // "EditorConfig.editorconfig",
+    "esbenp.prettier-vscode",
+    // "orta.vscode-jest",
+    // "graphql.vscode-graphql"
+    // "exiasr.hadolint",
+    // "bierner.markdown-mermaid",
+    // "ecmel.vscode-html-css",
+    // "foxundermoon.shell-format",
+    // "timonwong.shellcheck",
+    // "felixfbecker.css-stacking-contexts",
+    "nrwl.angular-console",
+  ],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [
+  // 	4000
+  // ]
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "yarn install",
+  
+  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "root"
+}
